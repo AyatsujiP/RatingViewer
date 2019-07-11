@@ -1,0 +1,40 @@
+{% extends 'visualizer/base.html' %}
+
+{% block content %}
+<h2>User Profile:</h2>
+
+<table class="ui celled table">
+	<tbody>
+		<tr><td>ncs_id</td> <td>{{ncs_id}}</td></tr>
+		<tr><td>name</td> <td>{{name_alphabet}}</td></tr>
+	</tbody>
+</table>
+
+<h2>
+Rating History:
+</h2>
+
+<table class="ui celled table">
+	<thead>
+		<tr>
+			<th>Month</th>
+			<th>Rating</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for rh in rating_history %}
+	<tr>
+		<td>{{ rh.update_month }}</td>
+		<td>{{ rh.rating }}</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
+
+<h2>
+Graph:
+</h2>
+{% load static %}
+<img src="{% get_static_prefix %}visualizer/images/{{filename}}.png">
+
+{% endblock %}

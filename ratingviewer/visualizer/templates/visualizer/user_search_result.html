@@ -1,0 +1,23 @@
+{% extends 'visualizer/base.html' %}
+
+{% block content %}
+
+<h2>Search Result</h2>
+<table class="ui celled table">
+	<thead>
+		<tr>
+			<th>NCS ID</th>
+			<th>Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for r in result %}
+			<tr>
+				<td>{{ r.ncs_id }}</td>
+				<td><a href="/visualizer/user/{{ r.ncs_id }}/">{{ r.name_alphabet }}</a></td>
+			</tr>
+		
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

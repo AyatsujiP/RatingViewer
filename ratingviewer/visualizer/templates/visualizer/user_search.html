@@ -1,0 +1,15 @@
+{% extends 'visualizer/base.html' %}
+
+{% block content %}
+<h2>User Search</h2>
+
+<form class="ui form" action='/visualizer/user/search_result/' method='POST'>
+	{% csrf_token %}
+	<div class="field">
+		<label>名前(アルファベット)あるいはNCS ID:</label>
+		<input type='text' name="name_alphabet">
+	</div>
+	
+	<button class="ui primary button" type="submit">検索</button>
+</form>
+{% endblock %}

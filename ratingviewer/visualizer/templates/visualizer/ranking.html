@@ -1,0 +1,27 @@
+{% extends 'visualizer/base.html' %}
+
+{% block content %}
+<h2>Ranking:</h2>
+
+<p>As of {{update_month}}</p>
+
+<table class="ui compact table">
+	<thead>
+		<tr><th>Rank</th>
+		<th>Name</th>
+		<th>Rating</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for r in rating_list %}
+	<tr>
+		<td>{{r.rank}}</td>
+		<td>{{r.name_alphabet}}</td>
+		<td>{{r.rating}}</td>
+	</tr>
+	{% endfor %}
+	
+	</tbody>
+</table>
+
+{% endblock %}
