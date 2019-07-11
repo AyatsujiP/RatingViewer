@@ -2,3 +2,6 @@
 /ratingviewer/db.sqlite3
 /ratingviewer/visualizer/migrations
 /ratingviewer/ratingviewer/__pycache__
+/ratingviewer/visualizer/static/visualizer/images/*.png
+/.project
+/.pydevproject
